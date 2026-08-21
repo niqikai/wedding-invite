@@ -1,0 +1,3 @@
+"use client";
+import { useRef, useState } from "react";
+export function MusicControl({src}:{src:string}){const audio=useRef<HTMLAudioElement>(null);const[on,setOn]=useState(false);const[available,setAvailable]=useState(true);if(!available)return null;async function toggle(){if(!audio.current)return;if(on){audio.current.pause();setOn(false)}else{try{await audio.current.play();setOn(true)}catch{setAvailable(false)}}}return <div className="music"><audio ref={audio} src={src} loop preload="none" onError={()=>setAvailable(false)}/><button onClick={toggle} aria-label={on?"暂停背景音乐":"播放背景音乐"}>{on?"Ⅱ":"♪"}</button></div>}

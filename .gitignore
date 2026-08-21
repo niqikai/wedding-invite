@@ -1,0 +1,10 @@
+node_modules
+.next
+.env
+*.db
+*.db-journal
+*.tsbuildinfo
+public/photos/*
+!public/photos/.gitkeep
+public/audio/*
+!public/audio/.gitkeep
